@@ -3,11 +3,8 @@ name: Java CI
 on: [push]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
       - name: Set up JDK 1.8
@@ -21,6 +18,6 @@ jobs:
       - name: Create Toolchains
         uses: jcblw/bash@master
         args:
-          - cat <<<$MY_VAR > file.csv
+          - cat "hello world"
       - name: Build with Maven
         run: mvn -q -B package --file pom.xml
