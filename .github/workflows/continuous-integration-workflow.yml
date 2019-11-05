@@ -20,6 +20,7 @@ jobs:
           java-version: 11
       - name: Create Toolchains
         uses: jcblw/bash@master
-        args: ["cat <<<$MY_VAR > file.csv"]
+        args:
+          - cat <<<$MY_VAR > file.csv
       - name: Build with Maven
         run: mvn -q -B package --file pom.xml
