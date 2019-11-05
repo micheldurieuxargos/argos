@@ -16,8 +16,9 @@ jobs:
         with:
           java-version: 11
       - name: Create Toolchains
-        uses: jcblw/bash@master
-        args:
-          - cat "hello world"
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          ls -l
       - name: Build with Maven
         run: mvn -q -B package --file pom.xml
