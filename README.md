@@ -1,4 +1,4 @@
 argos
 ============
 
-Some Description
+Some Description of this project
