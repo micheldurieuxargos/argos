@@ -1,4 +1,4 @@
 argos
 ============
 
-Some Description of this project
+Some Description of this project with how to build
