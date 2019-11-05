@@ -1,1 +1,1 @@
-# argos
+[![Build Status](https://gerardborst.visualstudio.com/Argos/_apis/build/status/argos-scc.argos?branchName=master)](https://gerardborst.visualstudio.com/Argos/_build/latest?definitionId=1&branchName=master)
