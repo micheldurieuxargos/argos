@@ -1,0 +1,4 @@
+pipeline:
+  build:
+  image: openjdk
+  commands: mvn -q package
