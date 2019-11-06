@@ -1,19 +1,21 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
+resources:
+  containers:
+  - container: mavenArgos
+    image: 'maven:3.6.2-ibmjava-alpine'
+    options: -v /home/vsts/NuGet/Cache:/NuGet/Cache
+    env: 
+      JAVA_1_8_LOCATION: /usr/lib/jvm/java-1.8-openjdk
+      JAVA_11_LOCATION: /usr/lib/jvm/java-11-openjdk
 
 pool:
   vmImage: 'ubuntu-latest'
+container: mavenArgos
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    cp toolchains.xml.template ~/.m2/toolchains.xml
+    apk --no-cache add openjdk11
+    apk --no-cache add openjdk8
+    mvn -q package
+    ls -l argos-service/target
+  displayName: 'Build & Test'
