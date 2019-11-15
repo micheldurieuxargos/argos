@@ -1,0 +1,2 @@
+FROM rabobanknl/argos-jenkins-base:latest
+
