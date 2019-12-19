@@ -35,6 +35,9 @@ steps:
       - sleep 300
     depends_on:
      - build argos service image
+     
+image_pull_secrets:
+   - dockerconfig
 
 trigger:
   event:
