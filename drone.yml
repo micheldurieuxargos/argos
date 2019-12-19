@@ -22,7 +22,9 @@ steps:
      - registry
   - name: argos-jenkins
     image: registry:5000/rabobanknl/argos-jenkins:latest
-    detach: true
+    pull: always
+    commands:
+      - echo hallo
     environment:
       JAVA_OPTS: -Djenkins.install.runSetupWizard=false
     depends_on:
