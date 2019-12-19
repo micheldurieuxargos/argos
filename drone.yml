@@ -20,6 +20,21 @@ steps:
       insecure: true
     depends_on:
      - registry
+     
+  - name: ping registry
+    image: busybox
+    commands:
+      - ping registry
+    depends_on:
+     - registry
+  - name: regression test
+    image: rabobanknl/argos-build:latest
+    commands:
+      - ping argos-jenkins
+      - sleep 300
+    depends_on:
+     - build argos service image
+ 
   - name: argos-jenkins
     image: registry:5000/rabobanknl/argos-jenkins:latest
     pull: always
