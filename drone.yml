@@ -30,12 +30,9 @@ steps:
  
   - name: argos-jenkins
     image: registry:5000/rabobanknl/argos-jenkins:latest
-    pull: always
     insecure: true
     commands:
       - echo hallo
-    environment:
-      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
     depends_on:
      - build argos service image
      - registry
