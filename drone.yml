@@ -23,7 +23,7 @@ steps:
      - registry
  
   - name: argos-jenkins
-    image: registry:5000/rabobanknl/argos-jenkins:latest
+    image: http://registry:5000/rabobanknl/argos-jenkins:latest
     commands:
       - echo hallo
     insecure: true
