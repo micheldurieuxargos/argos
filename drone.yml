@@ -29,8 +29,7 @@ steps:
      - registry
  
   - name: argos-jenkins
-    image: registry:5000/rabobanknl/argos-jenkins:latest
-    insecure: true
+    image: busybox
     commands:
       - echo hallo
     depends_on:
