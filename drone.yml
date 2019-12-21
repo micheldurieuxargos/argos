@@ -29,7 +29,7 @@ steps:
      - registry
  
   - name: argos-jenkins
-    image: busybox
+    image: registry:5000/rabobanknl/argos-jenkins:latest
     commands:
       - echo hallo
     depends_on:
