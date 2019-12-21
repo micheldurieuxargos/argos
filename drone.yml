@@ -18,6 +18,7 @@ steps:
       dockerfile: docker/JenkinsDockerfile
       registry: registry:5000
       insecure: true
+      purge: false
     depends_on:
      - registry
  
@@ -26,6 +27,7 @@ steps:
     commands:
       - echo hallo
     insecure: true
+    pull: never
     depends_on:
      - build argos service image
      - registry
