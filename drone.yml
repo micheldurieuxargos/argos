@@ -27,7 +27,7 @@ steps:
     commands:
       - echo hallo
     insecure: true
-    pull: never
+    pull: if-not-exists
     depends_on:
      - build argos service image
      - registry
