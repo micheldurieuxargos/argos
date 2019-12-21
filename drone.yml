@@ -6,23 +6,25 @@ type: docker
 services:
   - name: registry
     image: registry
+    ports:
+      - 443:5000
 
 steps:
 # build docker images
   - name: build argos service image
     image: plugins/docker
     settings:
-      repo: registry:5000/rabobanknl/argos-jenkins
+      repo: registry/rabobanknl/argos-jenkins
       tags: latest
       context: docker
       dockerfile: docker/JenkinsDockerfile
-      registry: registry:5000
+      registry: registry
       insecure: true
     depends_on:
      - registry
  
   - name: argos-jenkins
-    image: registry:5000/rabobanknl/argos-jenkins:latest
+    image: registry/rabobanknl/argos-jenkins:latest
     commands:
       - echo hallo
     insecure: true
@@ -37,8 +39,8 @@ steps:
 #     depends_on:
 #      - build argos service image
      
-image_pull_secrets:
-   - dockerconfig
+#image_pull_secrets:
+#   - dockerconfig
 
 trigger:
   event:
