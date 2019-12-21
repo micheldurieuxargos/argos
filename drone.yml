@@ -7,7 +7,7 @@ services:
   - name: registry
     image: registry
     ports:
-      - 443:5000
+      - "443:5000"
 
 steps:
 # build docker images
