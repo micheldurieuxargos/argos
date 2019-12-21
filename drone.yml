@@ -20,18 +20,12 @@ steps:
       insecure: true
     depends_on:
      - registry
-     
-  - name: ping registry
-    image: busybox
-    commands:
-      - ping registry
-    depends_on:
-     - registry
  
   - name: argos-jenkins
     image: registry:5000/rabobanknl/argos-jenkins:latest
     commands:
       - echo hallo
+    insecure: true
     depends_on:
      - build argos service image
      - registry
